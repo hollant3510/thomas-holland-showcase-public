@@ -3,4 +3,5 @@
 *.md text eol=lf
 *.diff text eol=lf
 *.toml text eol=lf
-
+*.sh text eol=lf
+projects/agent-friendly-git-wrapper/bin/* text eol=lf
