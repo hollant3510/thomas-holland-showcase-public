@@ -224,6 +224,14 @@ guardrails:
     paths: []
     exclude_patterns:
       - ".git/*"
+      - ".venv/*"
+      - "__pycache__/*"
+      - ".pytest_cache/*"
+      - ".mypy_cache/*"
+      - ".ruff_cache/*"
+      - ".tox/*"
+      - "dist/*"
+      - "build/*"
       - "node_modules/*"
   safe_mode: false
 

@@ -110,6 +110,13 @@ def _builtin_handlers() -> dict[str, Callable[[list[str], dict], int]]:
 
 def run(argv: Sequence[str] | None = None) -> int:
     """Execute the router CLI and return an exit code."""
+    # Avoid UnicodeEncodeError when routing git output to a legacy Windows console.
+    for stream in (sys.stdout, sys.stderr):
+        try:
+            stream.reconfigure(errors="replace")
+        except Exception:
+            pass
+
     parser = argparse.ArgumentParser(description="Router for git/gh commands.")
     parser.add_argument("--config", default="")
     parser.add_argument("--tool", choices=["git", "gh"], default="")
@@ -283,6 +290,10 @@ def run(argv: Sequence[str] | None = None) -> int:
         proc = _run_tool(tool, args, check=False)
         rc = proc.returncode
         return rc
+    except BrokenPipeError:
+        # Allow piping/truncation (e.g. `head`) without crashing the router.
+        rc = 0
+        return rc
     except RuntimeError as exc:
         sys.stderr.write(f"{exc}\n")
         rc = 2
@@ -316,4 +327,3 @@ def main() -> None:
 
 if __name__ == "__main__":
     main()
-

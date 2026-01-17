@@ -75,6 +75,8 @@ def dispatch_show(
         show_args.append("--stat")
     elif include_name_status:
         show_args.append("--name-status")
+    else:
+        show_args.append("--no-patch")
 
     proc = run_git(
         show_args,
@@ -89,5 +91,3 @@ def dispatch_show(
     if proc.stderr:
         sys.stderr.write(proc.stderr)
     return proc.returncode
-
-

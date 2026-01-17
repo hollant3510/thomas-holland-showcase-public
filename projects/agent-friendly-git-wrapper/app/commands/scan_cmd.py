@@ -9,6 +9,29 @@ from typing import Callable
 from app.cli.cli_parse import _parse_list_arg
 
 
+_SKIP_DIRS = {
+    ".git",
+    ".venv",
+    "node_modules",
+    "__pycache__",
+    ".pytest_cache",
+    ".mypy_cache",
+    ".ruff_cache",
+    ".tox",
+    "dist",
+    "build",
+}
+
+
+def _is_binary_file(path: Path, sample_bytes: int = 4096) -> bool:
+    """Return True if a file looks binary based on a small sample."""
+    try:
+        sample = path.read_bytes()[:sample_bytes]
+    except OSError:
+        return False
+    return b"\x00" in sample
+
+
 def _scan_conflicts(paths: list[str], exclude_patterns: list[str]) -> list[tuple[str, int, str]]:
     """Scan files for merge conflict markers."""
     results: list[tuple[str, int, str]] = []
@@ -21,17 +44,22 @@ def _scan_conflicts(paths: list[str], exclude_patterns: list[str]) -> list[tuple
             candidates = [p for p in root.rglob("*") if p.is_file()]
         for file_path in candidates:
             rel = file_path.as_posix()
-            if "/.git/" in rel:
+            if any(part in _SKIP_DIRS for part in file_path.parts):
+                continue
+            if "/.git/" in rel or rel.startswith(".git/"):
                 continue
             if any(fnmatch(rel, pattern) for pattern in exclude_patterns):
                 continue
+            if _is_binary_file(file_path):
+                continue
             try:
-                text = file_path.read_text(encoding="utf-8", errors="ignore")
+                text = file_path.read_text(encoding="utf-8", errors="replace")
             except OSError:
                 continue
             for idx, line in enumerate(text.splitlines(), start=1):
+                line = line.lstrip("\ufeff")
                 for marker in markers:
-                    if marker in line:
+                    if line.startswith(marker):
                         results.append((str(file_path), idx, marker))
                         break
     return results
@@ -85,5 +113,4 @@ def dispatch_scan(
         sys.stdout.write(f"  {path}:{line_no} {marker}\n")
     sys.stdout.write(f"conflict_count: {len(results)}\n")
     return 0
-
 
