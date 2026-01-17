@@ -1,0 +1,1 @@
+﻿pr create --template basic --title "Test PR"

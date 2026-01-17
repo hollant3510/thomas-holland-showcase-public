@@ -1,0 +1,3 @@
+﻿conflicts:
+conflict.txt:1 <<<<<<<
+conflict_count: 3

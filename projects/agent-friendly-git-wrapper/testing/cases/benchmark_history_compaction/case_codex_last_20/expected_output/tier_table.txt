@@ -1,0 +1,5 @@
+variant | chars | tokens | chars saved vs unified | tokens saved vs unified
+unified | 626,913 | 151,764 | 0.00% | 0.00%
+compact_u0 | 507,026 | 121,730 | 19.12% | 19.79%
+token_opt | 472,275 | 108,656 | 24.67% | 28.40%
+super_compact | 5,688 | 2,051 | 99.09% | 98.65%

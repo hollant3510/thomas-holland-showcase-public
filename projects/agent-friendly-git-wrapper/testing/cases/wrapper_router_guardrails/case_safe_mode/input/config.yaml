@@ -1,0 +1,6 @@
+﻿guardrails:
+  protected_branches: []
+  protected_ops: []
+  require_clean_ops: []
+  safe_block_ops:
+    - "reset --hard"

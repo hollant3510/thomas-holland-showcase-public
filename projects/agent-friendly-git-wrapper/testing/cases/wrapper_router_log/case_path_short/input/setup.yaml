@@ -1,0 +1,5 @@
+extra_commits:
+  - message: "touch sample"
+    file: sample.txt
+    content: "Hello again\n"
+short_hash: true

@@ -1,0 +1,3 @@
+﻿tool: git
+command: push
+allowed: no

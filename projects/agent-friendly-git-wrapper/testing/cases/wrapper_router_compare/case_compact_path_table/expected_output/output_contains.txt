@@ -1,0 +1,4 @@
+files[1]{id,path}:
+  1,sample.txt
+f 1
++World

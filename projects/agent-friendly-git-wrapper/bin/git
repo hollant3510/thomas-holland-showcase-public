@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+REPO_ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
+
+if [[ -z "${ROUTER_QUIET:-}" ]]; then
+  echo "router: intercepted git; use 'router' or 'router.sh' for direct routing" >&2
+fi
+
+exec "${REPO_ROOT}/router.sh" --tool git "$@"

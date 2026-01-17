@@ -1,0 +1,2 @@
+﻿tool: gh
+command: status

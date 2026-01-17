@@ -1,0 +1,10 @@
+﻿branch_hygiene:
+  default_base: main
+  include_remotes: false
+  fetch_before: true
+  protected_branches: []
+  protected_patterns: []
+  ignore_patterns: []
+  prune:
+    pattern: "feature"
+    default_apply: false

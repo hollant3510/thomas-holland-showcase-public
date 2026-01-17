@@ -1,0 +1,7 @@
+﻿remote: true
+push_branches:
+  - feature
+unmerged_branch: feature
+delete_remote_branches:
+  - feature
+checkout: main

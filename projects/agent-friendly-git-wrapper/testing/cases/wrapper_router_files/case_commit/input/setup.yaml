@@ -1,0 +1,4 @@
+﻿head_commits:
+  - message: "update"
+    file: sample.txt
+    content: "Hello commit\n"

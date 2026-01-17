@@ -1,0 +1,7 @@
+﻿base_branch: main
+head_branch: feature
+head_commits:
+  - message: "feature change"
+    file: sample.txt
+    content: "Hello feature\n"
+checkout: feature

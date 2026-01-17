@@ -1,0 +1,946 @@
+31d9b6f4d2033438d3375d4c3fbadcd5c08660d9 Improve handling of config and rules errors for app server clients (#9182)
+codex-rs/app-server-protocol/src/protocol/common.rs
+codex-rs/app-server-protocol/src/protocol/v2.rs
+codex-rs/app-server/src/lib.rs
+codex-rs/app-server/src/message_processor.rs
+codex-rs/app-server/src/outgoing_message.rs
+codex-rs/common/src/lib.rs
+codex-rs/core/src/codex.rs
+codex-rs/core/src/config/mod.rs
+codex-rs/core/src/config_loader/mod.rs
+codex-rs/core/src/config_loader/overrides.rs
+codex-rs/core/src/exec_policy.rs
+codex-rs/core/src/lib.rs
+codex-rs/exec/src/lib.rs
+codex-rs/tui/src/lib.rs
+codex-rs/tui/tests/suite/no_panic_on_startup.rs
+codex-rs/tui2/src/lib.rs
+codex-rs/tui2/tests/suite/no_panic_on_startup.rs
+
+5a82a72d935b7648fbd04462e2010eaa96783468 Use offline cache for tui migrations (#9186)
+codex-rs/tui/src/app.rs
+codex-rs/tui2/src/app.rs
+
+ce49e9284823aca7e398b30ae76e1a4144ccbf23 fix(tui): harden paste-burst state transitions (#9124)
+codex-rs/tui/src/bottom_pane/chat_composer.rs
+codex-rs/tui2/src/bottom_pane/chat_composer.rs
+
+4d787a2cc26d2c123fc153e6b5b7f8be7dc656fd Renew cache ttl on etag match (#9174)
+codex-rs/core/src/models_manager/cache.rs
+codex-rs/core/src/models_manager/manager.rs
+codex-rs/core/tests/suite/mod.rs
+codex-rs/core/tests/suite/models_cache_ttl.rs
+
+c96c26cf5b7532788602e262eb72eeaf4f851f45 [CODEX-4427] improve parsed commands (#8933)
+codex-rs/core/src/parse_command.rs
+
+7e33ac7eb6cc68f3b9fe0021d4af3b9e7bf6bb96 clean models manager (#9168)
+codex-rs/app-server/src/models.rs
+codex-rs/core/src/codex.rs
+codex-rs/core/src/models_manager/cache.rs
+codex-rs/core/src/models_manager/manager.rs
+codex-rs/core/src/thread_manager.rs
+codex-rs/core/tests/suite/list_models.rs
+codex-rs/core/tests/suite/prompt_caching.rs
+codex-rs/core/tests/suite/remote_models.rs
+codex-rs/exec/src/lib.rs
+codex-rs/protocol/src/openai_models.rs
+codex-rs/tui/src/app.rs
+codex-rs/tui2/src/app.rs
+
+ebbbee70c6ce9acff65ecb0c05041c8fae073a06 Update models.json (#9136)
+codex-rs/core/models.json
+
+5a70b1568f871d7ea73746b1e8247ba50157c901 WebSocket test server script (#9175)
+scripts/mock_responses_websocket_server.py
+
+903a0c0933091ff83483c21ceff11cb182a7b64b feat: add bazel-codex entry to justfile (#9177)
+MODULE.bazel.lock
+justfile
+
+4c673086bc5b4b04ac859d3ec06632cb0ce70724 fix: integration test for #9011 (#9166)
+codex-rs/Cargo.lock
+codex-rs/Cargo.toml
+codex-rs/tui/BUILD.bazel
+codex-rs/tui/Cargo.toml
+codex-rs/tui/tests/all.rs
+codex-rs/tui/tests/suite/mod.rs
+codex-rs/tui/tests/suite/no_panic_on_startup.rs
+codex-rs/tui2/BUILD.bazel
+codex-rs/tui2/Cargo.toml
+codex-rs/tui2/tests/all.rs
+codex-rs/tui2/tests/suite/mod.rs
+codex-rs/tui2/tests/suite/no_panic_on_startup.rs
+
+2cd1a0a45e8552dced0241ae024ffc354208a8ad fix: report an appropriate error in the TUI for malformed rules (#9011)
+codex-rs/cli/src/main.rs
+codex-rs/tui/src/app.rs
+codex-rs/tui/src/app_event.rs
+codex-rs/tui/src/chatwidget/agent.rs
+codex-rs/tui/src/lib.rs
+codex-rs/tui2/src/app.rs
+codex-rs/tui2/src/app_event.rs
+codex-rs/tui2/src/chatwidget/agent.rs
+codex-rs/tui2/src/lib.rs
+
+9f8d3c14ce84c5f4bfd96bd2d723dbb337e72418 Fix flakiness in WebSocket tests (#9169)
+codex-rs/core/tests/common/responses.rs
+
+89403c5e116da1c561d1b8fba4b8660f7108c29a Allow close skill popup with esc. (#9165)
+codex-rs/tui/src/bottom_pane/chat_composer.rs
+codex-rs/tui/src/bottom_pane/skill_popup.rs
+codex-rs/tui2/src/bottom_pane/chat_composer.rs
+codex-rs/tui2/src/bottom_pane/skill_popup.rs
+
+3c711f3d160f939aa668052f82535f3dbb3da9e6 Fix spinner/Esc interrupt when MCP startup completes mid-turn (#8661)
+codex-rs/tui/src/chatwidget.rs
+codex-rs/tui/src/chatwidget/tests.rs
+codex-rs/tui2/src/chatwidget.rs
+codex-rs/tui2/src/chatwidget/tests.rs
+
+141d2b502215e4017d0eb673000b8e571dbee9e5 test(tui): add deterministic paste-burst tests (#9121)
+codex-rs/tui/src/bottom_pane/chat_composer.rs
+codex-rs/tui/src/bottom_pane/paste_burst.rs
+codex-rs/tui2/src/bottom_pane/chat_composer.rs
+codex-rs/tui2/src/bottom_pane/paste_burst.rs
+
+ebacd28817564480b47351a37ab3db4413e5f871 fix(windows-sandbox-rs) bump SETUP_VERSION (#9134)
+codex-rs/windows-sandbox-rs/src/setup_orchestrator.rs
+
+e25d2ab3bfa3506e49513f47a3c0eae6d86a1a0e Fresh tooltips (#9130)
+codex-rs/tui/src/chatwidget.rs
+codex-rs/tui/tooltips.txt
+codex-rs/tui2/src/chatwidget.rs
+codex-rs/tui2/tooltips.txt
+
+bde734fd1e2e82f3417606bb7c3ad105101fcf8a feat(app-server): add an --analytics-default-enabled flag (#9118)
+codex-rs/app-server/src/lib.rs
+codex-rs/app-server/src/main.rs
+codex-rs/app-server/tests/suite/v2/analytics.rs
+codex-rs/app-server/tests/suite/v2/mod.rs
+codex-rs/cli/src/main.rs
+
+58e8f75b276bbc6bae5bde633137ceee399db6d9 fix(tui): document paste-burst state machine (#9020)
+.markdownlint-cli2.yaml
+codex-rs/tui/src/bottom_pane/AGENTS.md
+codex-rs/tui/src/bottom_pane/chat_composer.rs
+codex-rs/tui/src/bottom_pane/paste_burst.rs
+codex-rs/tui/src/bottom_pane/textarea.rs
+codex-rs/tui2/src/bottom_pane/AGENTS.md
+codex-rs/tui2/src/bottom_pane/chat_composer.rs
+codex-rs/tui2/src/bottom_pane/paste_burst.rs
+codex-rs/tui2/src/bottom_pane/textarea.rs
+
+2651980bdf803ec3dd7d7540648de286e4de2ec2 Restrict MCP servers from `requirements.toml` (#9101)
+codex-rs/app-server/src/codex_message_processor.rs
+codex-rs/app-server/src/config_api.rs
+codex-rs/cli/src/mcp_cmd.rs
+codex-rs/core/src/codex.rs
+codex-rs/core/src/config/constraint.rs
+codex-rs/core/src/config/mod.rs
+codex-rs/core/src/config_loader/config_requirements.rs
+codex-rs/core/src/config_loader/mod.rs
+codex-rs/core/src/mcp/mod.rs
+codex-rs/core/src/mcp_connection_manager.rs
+codex-rs/core/tests/suite/rmcp_client.rs
+codex-rs/core/tests/suite/truncation.rs
+codex-rs/tui/src/history_cell.rs
+codex-rs/tui2/src/history_cell.rs
+
+51d75bb80a91f79964199967c5e83c2f64c2ed25 fix: drop session span at end of the session (#9126)
+codex-rs/core/src/tasks/regular.rs
+codex-rs/otel/src/lib.rs
+codex-rs/otel/src/traces/otel_manager.rs
+
+57ba758df533ffceedaeee3c3eef5ea1b281fa1d Fix queued messages during /review (#9122)
+codex-rs/tui/src/chatwidget.rs
+codex-rs/tui/src/chatwidget/snapshots/codex_tui__chatwidget__tests__review_queues_user_messages_snapshot.snap
+codex-rs/tui/src/chatwidget/tests.rs
+
+40e24059989ffa808152c758a31f63756e0ec6e7 add generated jsonschema for config.toml (#8956)
+AGENTS.md
+MODULE.bazel.lock
+codex-rs/Cargo.lock
+codex-rs/core/BUILD.bazel
+codex-rs/core/Cargo.toml
+codex-rs/core/config.schema.json
+codex-rs/core/src/auth/storage.rs
+codex-rs/core/src/bin/config_schema.rs
+codex-rs/core/src/config/mod.rs
+codex-rs/core/src/config/profile.rs
+codex-rs/core/src/config/schema.md
+codex-rs/core/src/config/schema.rs
+codex-rs/core/src/config/types.rs
+codex-rs/core/src/features.rs
+codex-rs/core/src/features/legacy.rs
+codex-rs/core/src/model_provider_info.rs
+codex-rs/rmcp-client/Cargo.toml
+codex-rs/rmcp-client/src/oauth.rs
+justfile
+
+fe03320791eab0f0bc1faecd1291e0fae6bff89d ollama: default to Responses API for built-ins (#8798)
+codex-rs/Cargo.lock
+codex-rs/Cargo.toml
+codex-rs/common/src/oss.rs
+codex-rs/core/src/config/mod.rs
+codex-rs/core/src/lib.rs
+codex-rs/core/src/model_provider_info.rs
+codex-rs/exec/src/cli.rs
+codex-rs/exec/src/lib.rs
+codex-rs/ollama/Cargo.toml
+codex-rs/ollama/src/client.rs
+codex-rs/ollama/src/lib.rs
+codex-rs/tui/src/app.rs
+codex-rs/tui/src/cli.rs
+codex-rs/tui/src/lib.rs
+codex-rs/tui/src/oss_selection.rs
+codex-rs/tui2/src/app.rs
+codex-rs/tui2/src/cli.rs
+codex-rs/tui2/src/lib.rs
+codex-rs/tui2/src/oss_selection.rs
+
+2d56519ecd1998ff23464ae753863962cc967a58 Support response.done and add integration tests (#9129)
+codex-rs/codex-api/src/sse/responses.rs
+codex-rs/core/src/codex.rs
+codex-rs/core/tests/common/responses.rs
+codex-rs/core/tests/common/test_codex.rs
+codex-rs/core/tests/suite/agent_websocket.rs
+codex-rs/core/tests/suite/client_websockets.rs
+codex-rs/core/tests/suite/mod.rs
+
+97f1f20edbef37212c88d033a1cf4255a7fbed00 nit: collab send input cleaning (#9147)
+codex-rs/core/src/tools/handlers/collab.rs
+
+3b8d79ee11aa70b040d7f0e850fe6cc2f8f24a08 chore: better error handling on collab tools (#9143)
+codex-rs/core/src/agent/control.rs
+codex-rs/core/src/thread_manager.rs
+codex-rs/core/src/tools/handlers/collab.rs
+
+3a300d11174fa6a1fa355f4da5510bbe02038468 Use thread rollback for Esc backtrack (#9140)
+codex-rs/tui/src/app.rs
+codex-rs/tui/src/app_backtrack.rs
+codex-rs/tui/src/app_event.rs
+codex-rs/tui2/src/app.rs
+codex-rs/tui2/src/app_backtrack.rs
+codex-rs/tui2/src/app_event.rs
+
+17ab5f6a52e3bf68b46367ca51b7f67463ca4e30 Show tab queue hint in footer (#9138)
+codex-rs/tui/src/bottom_pane/chat_composer.rs
+codex-rs/tui/src/bottom_pane/footer.rs
+codex-rs/tui/src/bottom_pane/snapshots/codex_tui__bottom_pane__footer__tests__footer_context_only_queue_hint_disabled.snap
+codex-rs/tui/src/bottom_pane/snapshots/codex_tui__bottom_pane__footer__tests__footer_context_only_queue_hint_enabled.snap
+codex-rs/tui/src/chatwidget.rs
+codex-rs/tui/src/chatwidget/snapshots/codex_tui__chatwidget__tests__chatwidget_exec_and_status_layout_vt100_snapshot.snap
+codex-rs/tui2/src/bottom_pane/chat_composer.rs
+codex-rs/tui2/src/bottom_pane/footer.rs
+codex-rs/tui2/src/bottom_pane/snapshots/codex_tui2__bottom_pane__footer__tests__footer_context_only_queue_hint_disabled.snap
+codex-rs/tui2/src/bottom_pane/snapshots/codex_tui2__bottom_pane__footer__tests__footer_context_only_queue_hint_enabled.snap
+codex-rs/tui2/src/chatwidget.rs
+codex-rs/tui2/src/chatwidget/snapshots/codex_tui2__chatwidget__tests__chatwidget_exec_and_status_layout_vt100_snapshot.snap
+
+3c8fb90bf0ee58ce4267b35301660817cd029c2a Updated heuristic for tool call summary to detect file modifications (#9109)
+codex-rs/core/src/parse_command.rs
+
+325ce985f192ee2c6702c48d39501139b7cb68d5 Use markdown for migration screen (#8952)
+codex-rs/Cargo.lock
+codex-rs/Cargo.toml
+codex-rs/core/Cargo.toml
+codex-rs/core/src/models_manager/model_presets.rs
+codex-rs/core/tests/suite/list_models.rs
+codex-rs/protocol/src/openai_models.rs
+codex-rs/tui/src/app.rs
+codex-rs/tui/src/model_migration.rs
+codex-rs/tui/src/snapshots/codex_tui__app__tests__model_migration_prompt_shows_for_hidden_model.snap
+codex-rs/tui2/src/app.rs
+codex-rs/tui2/src/model_migration.rs
+codex-rs/tui2/src/snapshots/codex_tui2__app__tests__model_migration_prompt_shows_for_hidden_model.snap
+
+18b737910c7bbc2364a466ba329257cbb37d4cc7 Handle image paste from empty paste events (#9049)
+codex-rs/tui/src/app.rs
+codex-rs/tui/src/chatwidget.rs
+
+cbca43d57a961cf37950895d39684413000bab6c Send message by default mid turn. queue messages by tab (#9077)
+codex-rs/core/src/codex.rs
+codex-rs/core/src/features.rs
+codex-rs/core/src/state/turn.rs
+codex-rs/core/tests/common/streaming_sse.rs
+codex-rs/core/tests/suite/mod.rs
+codex-rs/core/tests/suite/pending_input.rs
+codex-rs/tui/src/bottom_pane/chat_composer.rs
+codex-rs/tui/src/bottom_pane/footer.rs
+codex-rs/tui/src/bottom_pane/mod.rs
+codex-rs/tui/src/bottom_pane/snapshots/codex_tui__bottom_pane__chat_composer__tests__footer_mode_shortcut_overlay.snap
+codex-rs/tui/src/bottom_pane/snapshots/codex_tui__bottom_pane__footer__tests__footer_shortcuts_shift_and_esc.snap
+codex-rs/tui/src/chatwidget.rs
+codex-rs/tui/src/chatwidget/tests.rs
+codex-rs/tui/tooltips.txt
+codex-rs/tui2/src/bottom_pane/chat_composer.rs
+codex-rs/tui2/src/bottom_pane/footer.rs
+codex-rs/tui2/src/bottom_pane/mod.rs
+codex-rs/tui2/src/bottom_pane/snapshots/codex_tui2__bottom_pane__chat_composer__tests__footer_mode_shortcut_overlay.snap
+codex-rs/tui2/src/bottom_pane/snapshots/codex_tui2__bottom_pane__footer__tests__footer_shortcuts_shift_and_esc.snap
+codex-rs/tui2/src/bottom_pane/snapshots/codex_tui__bottom_pane__chat_composer__tests__footer_mode_shortcut_overlay.snap
+codex-rs/tui2/src/bottom_pane/snapshots/codex_tui__bottom_pane__footer__tests__footer_shortcuts_shift_and_esc.snap
+codex-rs/tui2/src/chatwidget.rs
+codex-rs/tui2/src/chatwidget/tests.rs
+codex-rs/tui2/tooltips.txt
+
+e726a82c8aac6b0f0843bb914ca83f6e28305724 Websocket append support (#9128)
+codex-rs/codex-api/src/common.rs
+codex-rs/codex-api/src/endpoint/responses_websocket.rs
+codex-rs/codex-api/src/lib.rs
+codex-rs/codex-api/src/requests/headers.rs
+codex-rs/core/src/client.rs
+codex-rs/core/tests/suite/websocket.rs
+
+ddae70bd62614bb28579d693c8f6ba2d7d1d4628 fix: prompt for unsafe commands on Windows (#9117)
+codex-rs/core/src/command_safety/is_dangerous_command.rs
+codex-rs/core/src/exec_policy.rs
+codex-rs/execpolicy/src/policy.rs
+
+d75626ad9970133b82d9ca3c0914190785a421ea Reuse websocket connection (#9127)
+codex-rs/codex-api/src/endpoint/responses_websocket.rs
+codex-rs/codex-api/src/lib.rs
+codex-rs/core/src/client.rs
+codex-rs/core/src/codex.rs
+codex-rs/core/src/compact.rs
+codex-rs/core/tests/chat_completions_payload.rs
+codex-rs/core/tests/chat_completions_sse.rs
+codex-rs/core/tests/responses_headers.rs
+codex-rs/core/tests/suite/client.rs
+codex-rs/core/tests/suite/websocket.rs
+
+12779c7c07f36578d25ef793fbb814a1b26c77f9 fix(tui): show in-flight coalesced tool calls in transcript overlay (#8246)
+codex-rs/tui/src/app_backtrack.rs
+codex-rs/tui/src/chatwidget.rs
+codex-rs/tui/src/chatwidget/tests.rs
+codex-rs/tui/src/history_cell.rs
+codex-rs/tui/src/pager_overlay.rs
+codex-rs/tui/src/snapshots/codex_tui__pager_overlay__tests__transcript_overlay_renders_live_tail.snap
+codex-rs/tui2/src/app_backtrack.rs
+codex-rs/tui2/src/chatwidget.rs
+codex-rs/tui2/src/chatwidget/tests.rs
+codex-rs/tui2/src/history_cell.rs
+codex-rs/tui2/src/pager_overlay.rs
+codex-rs/tui2/src/snapshots/codex_tui2__pager_overlay__tests__transcript_overlay_renders_live_tail.snap
+
+490c1c1fddd19268ee978c45fb050cb8446b28de Add model client sessions (#9102)
+codex-rs/Cargo.lock
+codex-rs/Cargo.toml
+codex-rs/codex-api/Cargo.toml
+codex-rs/codex-api/src/endpoint/mod.rs
+codex-rs/codex-api/src/endpoint/responses_websocket.rs
+codex-rs/codex-api/src/lib.rs
+codex-rs/codex-api/src/sse/responses.rs
+codex-rs/core/src/client.rs
+codex-rs/core/src/codex.rs
+codex-rs/core/src/compact.rs
+codex-rs/core/src/lib.rs
+codex-rs/core/src/model_provider_info.rs
+codex-rs/core/tests/chat_completions_payload.rs
+codex-rs/core/tests/chat_completions_sse.rs
+codex-rs/core/tests/common/Cargo.toml
+codex-rs/core/tests/common/responses.rs
+codex-rs/core/tests/responses_headers.rs
+codex-rs/core/tests/suite/client.rs
+codex-rs/core/tests/suite/mod.rs
+codex-rs/core/tests/suite/stream_no_completed.rs
+codex-rs/core/tests/suite/websocket.rs
+codex-rs/protocol/src/protocol.rs
+
+87f7226cca12df04596938f58625de84e976309a Assemble sandbox/approval/network prompts dynamically (#8961)
+codex-rs/app-server/tests/suite/send_message.rs
+codex-rs/core/gpt-5.1-codex-max_prompt.md
+codex-rs/core/gpt-5.2-codex_prompt.md
+codex-rs/core/gpt_5_1_prompt.md
+codex-rs/core/gpt_5_2_prompt.md
+codex-rs/core/gpt_5_codex_prompt.md
+codex-rs/core/prompt.md
+codex-rs/core/prompt_with_apply_patch_instructions.md
+codex-rs/core/src/codex.rs
+codex-rs/core/src/environment_context.rs
+codex-rs/core/src/rollout/truncation.rs
+codex-rs/core/src/thread_manager.rs
+codex-rs/core/src/user_instructions.rs
+codex-rs/core/tests/suite/client.rs
+codex-rs/core/tests/suite/compact.rs
+codex-rs/core/tests/suite/compact_resume_fork.rs
+codex-rs/core/tests/suite/fork_thread.rs
+codex-rs/core/tests/suite/mod.rs
+codex-rs/core/tests/suite/permissions_messages.rs
+codex-rs/core/tests/suite/prompt_caching.rs
+codex-rs/mcp-server/tests/suite/codex_tool.rs
+codex-rs/protocol/BUILD.bazel
+codex-rs/protocol/src/models.rs
+codex-rs/protocol/src/prompts/permissions/approval_policy/never.md
+codex-rs/protocol/src/prompts/permissions/approval_policy/on_failure.md
+codex-rs/protocol/src/prompts/permissions/approval_policy/on_request.md
+codex-rs/protocol/src/prompts/permissions/approval_policy/unless_trusted.md
+codex-rs/protocol/src/prompts/permissions/sandbox_mode/danger_full_access.md
+codex-rs/protocol/src/prompts/permissions/sandbox_mode/read_only.md
+codex-rs/protocol/src/prompts/permissions/sandbox_mode/workspace_write.md
+
+3a6a43ff5caed37687e52bdbcd0e90e878656717 Extract single responses SSE event parsing (#9114)
+codex-rs/codex-api/src/sse/responses.rs
+
+d7cdcfc302c0992f0751fa1aa4725aa52169b049 Add some tests for image attachments (#9080)
+codex-rs/core/tests/suite/image_rollout.rs
+codex-rs/core/tests/suite/mod.rs
+codex-rs/tui/src/bottom_pane/chat_composer.rs
+codex-rs/tui/src/bottom_pane/snapshots/codex_tui__bottom_pane__chat_composer__tests__image_placeholder_multiple.snap
+codex-rs/tui/src/bottom_pane/snapshots/codex_tui__bottom_pane__chat_composer__tests__image_placeholder_single.snap
+
+5dfa780f3d05cd07a83dbf62450d521aa200b650 Remove unused conversation_id header (#9107)
+codex-rs/codex-api/src/requests/chat.rs
+codex-rs/codex-api/src/requests/headers.rs
+codex-rs/codex-api/src/requests/responses.rs
+codex-rs/core/tests/suite/client.rs
+
+3e91a95ce11ab190c827f91f23b434219c2c00d4 feat: hot reload mcp servers (#8957)
+codex-rs/app-server-protocol/src/protocol/common.rs
+codex-rs/app-server-protocol/src/protocol/v2.rs
+codex-rs/app-server/README.md
+codex-rs/app-server/src/codex_message_processor.rs
+codex-rs/core/src/codex.rs
+codex-rs/core/src/state/service.rs
+codex-rs/core/src/thread_manager.rs
+codex-rs/protocol/src/protocol.rs
+
+034d489c341fe57dff59724e15454609e490e115 chore(deps): bump tokio-util from 0.7.16 to 0.7.18 in /codex-rs (#9076)
+codex-rs/Cargo.lock
+codex-rs/Cargo.toml
+
+729e097662ac7d3a71a7cb35c2ab0efba0c16717 chore(deps): bump clap from 4.5.53 to 4.5.54 in /codex-rs (#9075)
+codex-rs/Cargo.lock
+
+7ac498e0e05b30fced76d12bccd85414e264fd77 chore(deps): bump which from 6.0.3 to 8.0.0 in /codex-rs (#9074)
+codex-rs/Cargo.lock
+codex-rs/Cargo.toml
+codex-rs/lmstudio/Cargo.toml
+
+45ffcdf886ef96f66cd232116917a353ec05f3e3 chore(deps): bump ts-rs from 11.0.1 to 11.1.0 in /codex-rs (#9072)
+codex-rs/Cargo.lock
+
+06088535ad82b79b0c615955cc6436b4c0840062 chore(deps): bump tui-scrollbar from 0.2.1 to 0.2.2 in /codex-rs (#9071)
+codex-rs/Cargo.lock
+codex-rs/Cargo.toml
+
+4223948cf5b1e2b301da737dd9a0a614354e5bab feat: wire fork to codex cli (#8994)
+codex-rs/cli/src/main.rs
+codex-rs/tui/src/app.rs
+codex-rs/tui/src/app_event.rs
+codex-rs/tui/src/chatwidget.rs
+codex-rs/tui/src/chatwidget/tests.rs
+codex-rs/tui/src/cli.rs
+codex-rs/tui/src/lib.rs
+codex-rs/tui/src/resume_picker.rs
+codex-rs/tui/src/slash_command.rs
+codex-rs/tui2/src/app.rs
+codex-rs/tui2/src/app_event.rs
+codex-rs/tui2/src/chatwidget.rs
+codex-rs/tui2/src/chatwidget/tests.rs
+codex-rs/tui2/src/cli.rs
+codex-rs/tui2/src/lib.rs
+codex-rs/tui2/src/resume_picker.rs
+codex-rs/tui2/src/slash_command.rs
+
+898e5f82f08d0cba3ee8719c1e4ba83b38a38f60 nit: add docstring (#9099)
+codex-rs/core/src/tools/registry.rs
+
+d5562983d9cf934801a1164b87ca4d0702559b6b Add static mcp callback uri support (#8971)
+codex-rs/app-server/src/codex_message_processor.rs
+codex-rs/cli/src/mcp_cmd.rs
+codex-rs/core/src/config/mod.rs
+codex-rs/rmcp-client/src/perform_oauth_login.rs
+
+9659583559322581b34e732cb6afeda9646de522 feat: add close tool implementation for collab (#9090)
+codex-rs/core/src/agent/control.rs
+codex-rs/core/src/tools/handlers/collab.rs
+
+623707ab586e233247b267d8d6151c51313c3a22 feat: add wait tool implementation for collab (#9088)
+codex-rs/core/src/agent/control.rs
+codex-rs/core/src/agent/status.rs
+codex-rs/core/src/codex.rs
+codex-rs/core/src/codex_delegate.rs
+codex-rs/core/src/codex_thread.rs
+codex-rs/core/src/tools/handlers/collab.rs
+codex-rs/protocol/src/protocol.rs
+
+86f81ca0108639cb44796ea8c294aabdd8b3b091 feat: testing harness for collab 1 (#8983)
+codex-rs/core/src/agent/control.rs
+codex-rs/core/src/thread_manager.rs
+codex-rs/core/src/tools/handlers/collab.rs
+
+6a57d7980bca3121ca6d0e9b795304ec2d294208 fix: support remote arm64 builds, as well (#9018)
+.github/workflows/Dockerfile.bazel
+.github/workflows/bazel.yml
+.github/workflows/ci.bazelrc
+BUILD.bazel
+MODULE.bazel
+rbe.bzl
+
+198289934f503d0cf7bee127597867d4b3a54955 Revert "Delete announcement_tip.toml" (#9032)
+announcement_tip.toml
+
+6709ad8975f0839eab5ddce7899e6b12acd7a209 Label attached images so agent can understand in-message labels (#8950)
+codex-rs/core/src/codex.rs
+codex-rs/core/src/event_mapping.rs
+codex-rs/core/src/tools/handlers/view_image.rs
+codex-rs/core/src/tools/spec.rs
+codex-rs/core/tests/suite/view_image.rs
+codex-rs/protocol/src/models.rs
+codex-rs/tui/src/bottom_pane/chat_composer.rs
+codex-rs/tui/src/bottom_pane/mod.rs
+codex-rs/tui/src/bottom_pane/textarea.rs
+codex-rs/tui/src/chatwidget.rs
+codex-rs/tui/src/chatwidget/tests.rs
+codex-rs/tui2/src/bottom_pane/chat_composer.rs
+codex-rs/tui2/src/bottom_pane/mod.rs
+codex-rs/tui2/src/bottom_pane/textarea.rs
+codex-rs/tui2/src/chatwidget.rs
+codex-rs/tui2/src/chatwidget/tests.rs
+
+cf515142b0cb8024a82314686a34d43f03b1ea4d fix: include AGENTS.md as repo root marker for integration tests (#9010)
+.github/workflows/bazel.yml
+BUILD.bazel
+codex-rs/core/BUILD.bazel
+
+74b22389315757cd475d401b74c22075ada9b387 fix: add .git to .bazelignore (#9008)
+.bazelignore
+
+cc0b5e85042524893abbbe7f2459a2e1bce8c4c3 Add URL to responses error messages (#8984)
+codex-rs/codex-client/src/error.rs
+codex-rs/codex-client/src/transport.rs
+codex-rs/core/src/api_bridge.rs
+codex-rs/core/src/client.rs
+codex-rs/core/src/error.rs
+
+8e49a2c0d108d8105838c95d862649604e6d4523 Add model provider info to /status if non-default (#8981)
+codex-rs/tui/src/status/card.rs
+codex-rs/tui2/src/status/card.rs
+
+af1ed2685e26637615ff7a7033b8a219b2bb99cb Refactor remote models tests to use TestCodex builder (#8940)
+codex-rs/core/tests/suite/remote_models.rs
+
+1a0e2e612b7d3efddeee069a13c759a34308a0b2 Delete announcement_tip.toml (#9003)
+announcement_tip.toml
+
+acfd94f625c4f75d927c3debc533347bcd19da24 Add hierarchical agent prompt (#8996)
+codex-rs/core/hierarchical_agents_message.md
+codex-rs/core/src/features.rs
+codex-rs/core/src/project_doc.rs
+codex-rs/core/tests/suite/hierarchical_agents.rs
+codex-rs/core/tests/suite/mod.rs
+
+cabf85aa1846ceb8841b269d93cf0b039316b217 Log unhandled sse events (#8949)
+codex-rs/codex-api/src/sse/responses.rs
+
+bc284669c2ef10c7a5b7c2d6b72da65da16dcdd2 fix: harden arg0 helper PATH handling (#8766)
+codex-rs/arg0/src/lib.rs
+
+fbe883318d89c320903261cd6ab228d7ebcbd2aa fix(app-server): set originator header from initialize (re-revert) (#8988)
+codex-rs/app-server/README.md
+codex-rs/app-server/src/lib.rs
+codex-rs/app-server/src/message_processor.rs
+codex-rs/app-server/tests/common/lib.rs
+codex-rs/app-server/tests/common/mcp_process.rs
+codex-rs/app-server/tests/suite/user_agent.rs
+codex-rs/app-server/tests/suite/v2/initialize.rs
+codex-rs/app-server/tests/suite/v2/mod.rs
+codex-rs/app-server/tests/suite/v2/turn_start.rs
+codex-rs/core/src/default_client.rs
+codex-rs/core/src/otel_init.rs
+codex-rs/core/src/rollout/recorder.rs
+codex-rs/exec/src/lib.rs
+codex-rs/tui/src/lib.rs
+codex-rs/tui2/src/lib.rs
+
+2a06d64bc996e4d848b95285700b195c2852a42f feat: add support for building with Bazel (#8875)
+.bazelrc
+.github/workflows/Dockerfile.bazel
+.github/workflows/bazel.yml
+.github/workflows/ci.bazelrc
+BUILD.bazel
+MODULE.bazel
+MODULE.bazel.lock
+codex-rs/BUILD.bazel
+codex-rs/ansi-escape/BUILD.bazel
+codex-rs/app-server-protocol/BUILD.bazel
+codex-rs/app-server-test-client/BUILD.bazel
+codex-rs/app-server/BUILD.bazel
+codex-rs/app-server/tests/common/BUILD.bazel
+codex-rs/apply-patch/BUILD.bazel
+codex-rs/arg0/BUILD.bazel
+codex-rs/async-utils/BUILD.bazel
+codex-rs/backend-client/BUILD.bazel
+codex-rs/chatgpt/BUILD.bazel
+codex-rs/cli/BUILD.bazel
+codex-rs/cloud-tasks-client/BUILD.bazel
+codex-rs/cloud-tasks/BUILD.bazel
+codex-rs/codex-api/BUILD.bazel
+codex-rs/codex-backend-openapi-models/BUILD.bazel
+codex-rs/codex-client/BUILD.bazel
+codex-rs/common/BUILD.bazel
+codex-rs/core/BUILD.bazel
+codex-rs/core/tests/common/BUILD.bazel
+codex-rs/docs/bazel.md
+codex-rs/exec-server/BUILD.bazel
+codex-rs/exec-server/tests/common/BUILD.bazel
+codex-rs/exec/BUILD.bazel
+codex-rs/execpolicy-legacy/BUILD.bazel
+codex-rs/execpolicy/BUILD.bazel
+codex-rs/feedback/BUILD.bazel
+codex-rs/file-search/BUILD.bazel
+codex-rs/keyring-store/BUILD.bazel
+codex-rs/linux-sandbox/BUILD.bazel
+codex-rs/lmstudio/BUILD.bazel
+codex-rs/login/BUILD.bazel
+codex-rs/mcp-server/BUILD.bazel
+codex-rs/mcp-server/tests/common/BUILD.bazel
+codex-rs/mcp-types/BUILD.bazel
+codex-rs/ollama/BUILD.bazel
+codex-rs/otel/BUILD.bazel
+codex-rs/process-hardening/BUILD.bazel
+codex-rs/protocol/BUILD.bazel
+codex-rs/responses-api-proxy/BUILD.bazel
+codex-rs/rmcp-client/BUILD.bazel
+codex-rs/stdio-to-uds/BUILD.bazel
+codex-rs/tui/BUILD.bazel
+codex-rs/tui2/BUILD.bazel
+codex-rs/utils/absolute-path/BUILD.bazel
+codex-rs/utils/cache/BUILD.bazel
+codex-rs/utils/cargo-bin/BUILD.bazel
+codex-rs/utils/git/BUILD.bazel
+codex-rs/utils/image/BUILD.bazel
+codex-rs/utils/json-to-toml/BUILD.bazel
+codex-rs/utils/pty/BUILD.bazel
+codex-rs/utils/readiness/BUILD.bazel
+codex-rs/utils/string/BUILD.bazel
+codex-rs/windows-sandbox-rs/BUILD.bazel
+defs.bzl
+justfile
+patches/BUILD.bazel
+patches/llvm_toolchain_archive_params.patch
+patches/rules_rust.patch
+patches/rules_rust_musl.patch
+patches/rules_rust_windows_gnu.patch
+patches/windows-link.patch
+
+7daaabc795d5edd9dcab964bcce67456071d46fd fix: add tui.alternate_screen config and --no-alt-screen CLI flag for Zellij scrollback (#8555)
+codex-cli/bin/codex.js
+codex-rs/core/src/config/mod.rs
+codex-rs/core/src/config/types.rs
+codex-rs/protocol/src/config_types.rs
+codex-rs/tui/src/cli.rs
+codex-rs/tui/src/lib.rs
+codex-rs/tui/src/tui.rs
+codex-rs/tui2/src/cli.rs
+codex-rs/tui2/src/lib.rs
+codex-rs/tui2/src/tui.rs
+
+1aed01e99f78c5a70fb105395500347b9193b2cf renaming: task to turn (#8963)
+codex-rs/app-server-test-client/src/main.rs
+codex-rs/app-server/src/bespoke_event_handling.rs
+codex-rs/app-server/src/codex_message_processor.rs
+codex-rs/app-server/tests/suite/codex_message_processor_flow.rs
+codex-rs/core/src/agent/control.rs
+codex-rs/core/src/agent/status.rs
+codex-rs/core/src/codex.rs
+codex-rs/core/src/codex_delegate.rs
+codex-rs/core/src/compact.rs
+codex-rs/core/src/compact_remote.rs
+codex-rs/core/src/rollout/policy.rs
+codex-rs/core/src/tasks/mod.rs
+codex-rs/core/src/tasks/regular.rs
+codex-rs/core/src/tasks/review.rs
+codex-rs/core/src/tasks/user_shell.rs
+codex-rs/core/tests/common/test_codex.rs
+codex-rs/core/tests/suite/abort_tasks.rs
+codex-rs/core/tests/suite/apply_patch_cli.rs
+codex-rs/core/tests/suite/approvals.rs
+codex-rs/core/tests/suite/client.rs
+codex-rs/core/tests/suite/codex_delegate.rs
+codex-rs/core/tests/suite/compact.rs
+codex-rs/core/tests/suite/compact_remote.rs
+codex-rs/core/tests/suite/compact_resume_fork.rs
+codex-rs/core/tests/suite/exec_policy.rs
+codex-rs/core/tests/suite/fork_thread.rs
+codex-rs/core/tests/suite/models_etag_responses.rs
+codex-rs/core/tests/suite/otel.rs
+codex-rs/core/tests/suite/prompt_caching.rs
+codex-rs/core/tests/suite/quota_exceeded.rs
+codex-rs/core/tests/suite/remote_models.rs
+codex-rs/core/tests/suite/request_compression.rs
+codex-rs/core/tests/suite/resume.rs
+codex-rs/core/tests/suite/resume_warning.rs
+codex-rs/core/tests/suite/review.rs
+codex-rs/core/tests/suite/rmcp_client.rs
+codex-rs/core/tests/suite/shell_snapshot.rs
+codex-rs/core/tests/suite/skills.rs
+codex-rs/core/tests/suite/stream_error_allows_next_turn.rs
+codex-rs/core/tests/suite/stream_no_completed.rs
+codex-rs/core/tests/suite/tool_harness.rs
+codex-rs/core/tests/suite/tool_parallelism.rs
+codex-rs/core/tests/suite/truncation.rs
+codex-rs/core/tests/suite/unified_exec.rs
+codex-rs/core/tests/suite/user_notification.rs
+codex-rs/core/tests/suite/user_shell_cmd.rs
+codex-rs/core/tests/suite/view_image.rs
+codex-rs/docs/protocol_v1.md
+codex-rs/exec/src/event_processor_with_human_output.rs
+codex-rs/exec/src/event_processor_with_jsonl_output.rs
+codex-rs/exec/tests/event_processor_with_json_output.rs
+codex-rs/mcp-server/src/codex_tool_runner.rs
+codex-rs/mcp-server/tests/common/mcp_process.rs
+codex-rs/protocol/src/protocol.rs
+codex-rs/tui/src/chatwidget.rs
+codex-rs/tui/src/chatwidget/tests.rs
+codex-rs/tui2/src/chatwidget.rs
+codex-rs/tui2/src/chatwidget/tests.rs
+
+ed64804cb52372f63f7e0f64a6c716a46a87da19 nit: rename to analytics_enabled (#8978)
+codex-rs/app-server/src/lib.rs
+codex-rs/core/src/config/mod.rs
+codex-rs/core/src/otel_init.rs
+codex-rs/exec/src/lib.rs
+codex-rs/tui/src/lib.rs
+codex-rs/tui2/src/lib.rs
+
+5c380d5b1e8a30f415a9ee461095d2d6f768dd58 Revert "fix(app-server): set originator header from initialize JSON-RPC request" (#8986)
+codex-rs/app-server/README.md
+codex-rs/app-server/src/lib.rs
+codex-rs/app-server/src/message_processor.rs
+codex-rs/app-server/tests/common/lib.rs
+codex-rs/app-server/tests/common/mcp_process.rs
+codex-rs/app-server/tests/suite/user_agent.rs
+codex-rs/app-server/tests/suite/v2/initialize.rs
+codex-rs/app-server/tests/suite/v2/mod.rs
+codex-rs/app-server/tests/suite/v2/turn_start.rs
+codex-rs/core/src/default_client.rs
+codex-rs/core/src/otel_init.rs
+codex-rs/core/src/rollout/recorder.rs
+codex-rs/exec/src/lib.rs
+codex-rs/tui/src/lib.rs
+codex-rs/tui2/src/lib.rs
+
+5b5a5b92b5a64ef55d31aafc6f3821fb19186508 Add config to disable /feedback (#8909)
+codex-rs/app-server/src/codex_message_processor.rs
+codex-rs/core/src/config/mod.rs
+codex-rs/core/src/config/types.rs
+codex-rs/tui/src/bottom_pane/feedback_view.rs
+codex-rs/tui/src/bottom_pane/mod.rs
+codex-rs/tui/src/chatwidget.rs
+codex-rs/tui2/src/bottom_pane/feedback_view.rs
+codex-rs/tui2/src/bottom_pane/mod.rs
+codex-rs/tui2/src/chatwidget.rs
+
+ea56186c2b53a591500aba3da6d5d3302ad06598 fix(app-server): set originator header from initialize JSON-RPC request (#8873)
+codex-rs/app-server/README.md
+codex-rs/app-server/src/lib.rs
+codex-rs/app-server/src/message_processor.rs
+codex-rs/app-server/tests/common/lib.rs
+codex-rs/app-server/tests/common/mcp_process.rs
+codex-rs/app-server/tests/suite/user_agent.rs
+codex-rs/app-server/tests/suite/v2/initialize.rs
+codex-rs/app-server/tests/suite/v2/mod.rs
+codex-rs/app-server/tests/suite/v2/turn_start.rs
+codex-rs/core/src/default_client.rs
+codex-rs/core/src/otel_init.rs
+codex-rs/core/src/rollout/recorder.rs
+codex-rs/exec/src/lib.rs
+codex-rs/tui/src/lib.rs
+codex-rs/tui2/src/lib.rs
+
+cacdae8c058325a1e9cd150580fac661a6a040d1 Work around crash in system-configuration library (#8954)
+codex-rs/rmcp-client/src/auth_status.rs
+
+bc92dc5cf068d4bd93bccd306c50d276e00ef8ed chore: update metrics temporality (#8901)
+codex-rs/otel/src/metrics/client.rs
+
+7e5b3e069eb916fc5513255690060ac397e00245 chore: metrics tool call (#8975)
+codex-rs/otel/src/traces/otel_manager.rs
+
+e2e3f4490e80e9b7e18ca190aa92eb38f80d1ede chore: add approval metric (#8970)
+codex-rs/core/src/tools/runtimes/apply_patch.rs
+codex-rs/core/src/tools/runtimes/shell.rs
+codex-rs/core/src/tools/runtimes/unified_exec.rs
+codex-rs/core/src/tools/sandboxing.rs
+codex-rs/protocol/src/protocol.rs
+
+225614d7fbbcc1c32f8e943e9413624b01df1159 chore: add mcp call metric (#8973)
+codex-rs/core/src/mcp_tool_call.rs
+
+16c66c37eb531f500d3d81460b846f099e2eba44 chore: move otel provider outside of trace module (#8968)
+codex-rs/core/src/otel_init.rs
+codex-rs/otel/README.md
+codex-rs/otel/src/lib.rs
+codex-rs/otel/src/otel_provider.rs
+codex-rs/otel/src/traces/mod.rs
+codex-rs/otel/src/traces/otel_manager.rs
+
+e9c548c65e99792e62cbca1cb479938d5463911a chore: non mutable btree when building specs (#8969)
+codex-rs/core/src/tools/spec.rs
+
+fceae86581fe4a87921bc5b79d220f5b778c55bd nit: rename session metric (#8966)
+codex-rs/core/src/codex.rs
+
+568b938c80a3454a3aa091b4ba20636662dea86b feat: first pass on clb tool (#8930)
+codex-rs/core/src/codex.rs
+codex-rs/core/src/features.rs
+codex-rs/core/src/tools/handlers/collab.rs
+codex-rs/core/src/tools/handlers/mod.rs
+codex-rs/core/src/tools/spec.rs
+
+24d6e0114fab2ab6af98275a760df6f3c9dbf2d9 [device-auth] When headless environment is detected, show device login flow instead. (#8756)
+codex-rs/cli/src/login.rs
+codex-rs/cli/src/main.rs
+codex-rs/core/src/env.rs
+codex-rs/login/src/device_code_auth.rs
+codex-rs/login/src/lib.rs
+codex-rs/tui/src/onboarding/auth.rs
+codex-rs/tui/src/onboarding/auth/headless_chatgpt_login.rs
+codex-rs/tui2/src/onboarding/auth.rs
+codex-rs/tui2/src/onboarding/auth/headless_chatgpt_login.rs
+
+d3ff668f68a1b338140168c2913b82fca06d3747 fix: remove existing process hardening from Codex CLI (#8951)
+codex-rs/Cargo.lock
+codex-rs/cli/Cargo.toml
+codex-rs/cli/src/main.rs
+
+81caee3400528d6a9d591f6939bc82cc9960732e Add 5s timeout to models list call + integration test (#8942)
+codex-rs/core/src/models_manager/manager.rs
+codex-rs/core/tests/common/responses.rs
+codex-rs/core/tests/suite/remote_models.rs
+
+51dd5af807b224ab4cde43f53ecd0028901c87ec fix: treat null MCP resource args as empty (#8917)
+codex-rs/core/src/tools/handlers/mcp_resource.rs
+
+6372ba9d5f0694482b0809e1eac4b123cab65e55 Elevated sandbox NUX (#8789)
+codex-rs/core/src/config/mod.rs
+codex-rs/core/src/lib.rs
+codex-rs/core/src/windows_sandbox.rs
+codex-rs/tui/src/app.rs
+codex-rs/tui/src/app_event.rs
+codex-rs/tui/src/bottom_pane/chat_composer.rs
+codex-rs/tui/src/bottom_pane/command_popup.rs
+codex-rs/tui/src/chatwidget.rs
+codex-rs/tui/src/chatwidget/snapshots/codex_tui__chatwidget__tests__approvals_selection_popup@windows.snap
+codex-rs/tui/src/chatwidget/snapshots/codex_tui__chatwidget__tests__approvals_selection_popup@windows_degraded.snap
+codex-rs/tui/src/chatwidget/tests.rs
+codex-rs/tui/src/slash_command.rs
+codex-rs/tui2/src/app.rs
+codex-rs/tui2/src/app_event.rs
+codex-rs/tui2/src/bottom_pane/chat_composer.rs
+codex-rs/tui2/src/bottom_pane/command_popup.rs
+codex-rs/tui2/src/chatwidget.rs
+codex-rs/tui2/src/chatwidget/snapshots/codex_tui2__chatwidget__tests__approvals_selection_popup@windows_degraded.snap
+codex-rs/tui2/src/chatwidget/tests.rs
+codex-rs/tui2/src/slash_command.rs
+codex-rs/windows-sandbox-rs/src/identity.rs
+codex-rs/windows-sandbox-rs/src/lib.rs
+
+bdfdebcfa1deec5d5659b076b1a982015c5dc2c5 fix: increase timeout for wait_for_event() for Bazel (#8946)
+codex-rs/core/tests/suite/view_image.rs
+
+62a73b6d581a8d3644cfd56189636a3fab438d08 Attempt to reload auth as a step in 401 recovery (#8880)
+codex-rs/core/src/auth.rs
+codex-rs/core/src/client.rs
+codex-rs/core/tests/suite/auth_refresh.rs
+
+be4364bb8032556c6b5b7dbb95df4fa104b6c5a5 [chore] move app server tests from chat completion to responses (#8939)
+codex-rs/app-server/tests/common/lib.rs
+codex-rs/app-server/tests/common/mock_model_server.rs
+codex-rs/app-server/tests/common/responses.rs
+codex-rs/app-server/tests/suite/auth.rs
+codex-rs/app-server/tests/suite/codex_message_processor_flow.rs
+codex-rs/app-server/tests/suite/create_thread.rs
+codex-rs/app-server/tests/suite/interrupt.rs
+codex-rs/app-server/tests/suite/login.rs
+codex-rs/app-server/tests/suite/v2/account.rs
+codex-rs/app-server/tests/suite/v2/review.rs
+codex-rs/app-server/tests/suite/v2/thread_fork.rs
+codex-rs/app-server/tests/suite/v2/thread_loaded_list.rs
+codex-rs/app-server/tests/suite/v2/thread_rollback.rs
+codex-rs/app-server/tests/suite/v2/thread_start.rs
+codex-rs/app-server/tests/suite/v2/turn_interrupt.rs
+codex-rs/app-server/tests/suite/v2/turn_start.rs
+
+0d3e673019f558768eb33e49b4acb73343406e96 remove `get_responses_requests` and `get_responses_request_bodies` to use in-place matcher (#8858)
+codex-rs/core/tests/common/responses.rs
+codex-rs/core/tests/common/test_codex.rs
+codex-rs/core/tests/suite/client.rs
+codex-rs/core/tests/suite/compact.rs
+codex-rs/core/tests/suite/compact_resume_fork.rs
+codex-rs/core/tests/suite/request_compression.rs
+codex-rs/core/tests/suite/review.rs
+codex-rs/core/tests/suite/unified_exec.rs
+
+41a317321d113455ac972bd491089832331918e0 feat: fork conversation/thread (#8866)
+codex-rs/app-server-protocol/src/protocol/common.rs
+codex-rs/app-server-protocol/src/protocol/v1.rs
+codex-rs/app-server-protocol/src/protocol/v2.rs
+codex-rs/app-server/README.md
+codex-rs/app-server/src/codex_message_processor.rs
+codex-rs/app-server/tests/common/mcp_process.rs
+codex-rs/app-server/tests/suite/fork_thread.rs
+codex-rs/app-server/tests/suite/mod.rs
+codex-rs/app-server/tests/suite/v2/mod.rs
+codex-rs/app-server/tests/suite/v2/thread_fork.rs
+codex-rs/core/src/rollout/truncation.rs
+codex-rs/core/src/thread_manager.rs
+
+051bf81df96e5e46b0978389637f2fa10e86f020 [fix] app server flaky send_messages test (#8874)
+codex-rs/app-server/tests/common/mcp_process.rs
+codex-rs/app-server/tests/suite/codex_message_processor_flow.rs
+codex-rs/app-server/tests/suite/send_message.rs
+codex-rs/app-server/tests/suite/v2/turn_start.rs
+
+a70f5b0b3cff19f8a316665d1652a9b3ad36c651 fix: correct login shell mismatch in the accept_elicitation_for_prompt_rule() test (#8931)
+codex-rs/exec-server/tests/suite/accept_elicitation.rs
+
+224c4867dd5b3ff708668ae544ead810cd86a712 fix: increase timeout for tests that have been flaking with timeout issues (#8932)
+codex-rs/core/tests/suite/shell_command.rs
+
+c9c65606852c0cda9d983b4917359a0826a4b7f0 nit: parse_arguments (#8927)
+codex-rs/core/src/tools/handlers/apply_patch.rs
+codex-rs/core/src/tools/handlers/grep_files.rs
+codex-rs/core/src/tools/handlers/list_dir.rs
+codex-rs/core/src/tools/handlers/mod.rs
+codex-rs/core/src/tools/handlers/read_file.rs
+codex-rs/core/src/tools/handlers/shell.rs
+codex-rs/core/src/tools/handlers/test_sync.rs
+codex-rs/core/src/tools/handlers/unified_exec.rs
+codex-rs/core/src/tools/handlers/view_image.rs
+codex-rs/protocol/src/models.rs
+
+634764ece9a895672a58d3b836e4c502aa5ebd15 Immutable CodexAuth (#8857)
+codex-rs/app-server/src/codex_message_processor.rs
+codex-rs/backend-client/src/client.rs
+codex-rs/chatgpt/src/chatgpt_token.rs
+codex-rs/cli/src/login.rs
+codex-rs/cloud-tasks/src/lib.rs
+codex-rs/cloud-tasks/src/util.rs
+codex-rs/core/src/api_bridge.rs
+codex-rs/core/src/auth.rs
+codex-rs/core/src/client.rs
+codex-rs/core/src/codex.rs
+codex-rs/core/src/models_manager/manager.rs
+codex-rs/core/tests/suite/auth_refresh.rs
+codex-rs/exec/src/lib.rs
+codex-rs/tui/src/chatwidget.rs
+codex-rs/tui/src/lib.rs
+codex-rs/tui/src/status/helpers.rs
+codex-rs/tui2/src/chatwidget.rs
+codex-rs/tui2/src/lib.rs
+codex-rs/tui2/src/status/helpers.rs
+
+5bc3e325a6cee50f12632ebb94f2cc8f27b3ffe2 add tooltip hint for shell commands (!) (#8926)
+codex-rs/tui/src/bottom_pane/footer.rs
+codex-rs/tui/src/bottom_pane/snapshots/codex_tui__bottom_pane__chat_composer__tests__footer_mode_shortcut_overlay.snap
+codex-rs/tui/src/bottom_pane/snapshots/codex_tui__bottom_pane__footer__tests__footer_shortcuts_shift_and_esc.snap
+codex-rs/tui2/src/bottom_pane/footer.rs
+codex-rs/tui2/src/bottom_pane/snapshots/codex_tui2__bottom_pane__chat_composer__tests__footer_mode_shortcut_overlay.snap
+codex-rs/tui2/src/bottom_pane/snapshots/codex_tui2__bottom_pane__footer__tests__footer_shortcuts_shift_and_esc.snap
+
+41560604169ce3dd4ba4874f9f852968bfc4cdf1 Add `read-only` when backfilling requirements from managed_config (#8913)
+codex-rs/core/src/config_loader/mod.rs

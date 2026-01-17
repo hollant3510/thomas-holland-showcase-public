@@ -1,0 +1,19 @@
+repo: codex
+repo_url: https://github.com/openai/codex
+range:
+  commits: 10
+  start: 4c673086bc5b4b04ac859d3ec06632cb0ce70724
+  end: 31d9b6f4d2033438d3375d4c3fbadcd5c08660d9
+variants:
+  - name: unified
+    command: router.sh history --n 10
+    output: outputs/unified.txt
+  - name: compact_u0
+    command: router.sh history --n 10 --compact
+    output: outputs/compact_u0.txt
+  - name: token_opt
+    command: router.sh history --n 10 --compact=tokens
+    output: outputs/token_opt.txt
+  - name: super_compact
+    command: router.sh history --n 10 --files-only --no-patch
+    output: outputs/super_compact.txt

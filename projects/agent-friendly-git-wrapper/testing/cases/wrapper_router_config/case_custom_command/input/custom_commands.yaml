@@ -1,0 +1,5 @@
+﻿custom_commands:
+  startup:
+    steps:
+      - tool: git
+        args: [status]

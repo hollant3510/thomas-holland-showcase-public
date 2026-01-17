@@ -1,0 +1,9 @@
+﻿title: Example PR
+state: OPEN
+draft: False
+review: APPROVED
+checks: total=2 success=1 failed=0 pending=1
+mergeable: MERGEABLE
+merge_state: CLEAN
+labels: bug, needs-review
+url: https://example.com/pr/1

@@ -1,0 +1,2 @@
+﻿router:
+  unknown_command_policy: error

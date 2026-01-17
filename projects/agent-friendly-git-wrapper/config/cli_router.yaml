@@ -1,0 +1,267 @@
+router:
+  enable_git: true
+  enable_gh: true
+  allow_prefixed: true
+  overlap_default: git
+  default_command_enabled: true
+  unknown_command_policy: error
+  default_base: main
+  default_profile: default
+  diff_default_detail: 2
+  diff_default_context: null
+  diff_default_noise: max
+  history_default_commit_meta: short
+  history_default_patch: true
+  compact_auto_tune:
+    enabled: false
+    metric: tokens
+    encoding: cl100k_base
+    candidates:
+      - path-table
+      - path-common-prefix
+      - no-prefix
+  history_compact_meta_overrides:
+    tokens: none
+  diff_noise_levels:
+    max:
+      flags: ["-w", "--ignore-blank-lines", "--ignore-space-at-eol"]
+    standard:
+      flags: ["-w"]
+    none:
+      flags: []
+  diff_default_excludes:
+    - "docs/**"
+    - "vendor/**"
+    - "generated/**"
+    - "**/package-lock.json"
+    - "**/pnpm-lock.yaml"
+    - "**/yarn.lock"
+  compact_defaults:
+    context: 0
+    drop_headers: true
+    no_prefix: true
+    drop_diff_header: false
+    drop_hunk_header: false
+    short_diff_header: false
+    short_hunk_header: false
+    drop_filemode: false
+    drop_rename: false
+    drop_similarity: false
+    drop_binary: false
+    path_strip: ""
+    path_basename: false
+    path_table: false
+    path_common_prefix: true
+    path_prefix_token: "..."
+    hunk_new_only: true
+    prefix_first_only: false
+  compact_profiles:
+    tokens:
+      context: 0
+      drop_headers: true
+      no_prefix: true
+      short_diff_header: true
+      short_hunk_header: true
+      drop_filemode: true
+      hunk_new_only: true
+      prefix_first_only: true
+  command_timeout: null
+  log_all: false
+  log_file: "router.log"
+  log_format: "txt"
+  log_output_max: 2000
+  custom_commands_file: cli_router_custom_commands.yaml
+
+commands:
+  state:
+    enabled: true
+    handler: state
+    description: Compact repo/branch/worktree snapshot.
+  diff:
+    enabled: true
+    handler: diff
+    description: Git diff with noise filtering and detail controls.
+  log:
+    enabled: true
+    handler: log
+    description: One-line commit history with optional range/path filters.
+  history:
+    enabled: true
+    handler: history
+    description: Commit history with optional patch output and compact modes.
+  files:
+    enabled: true
+    handler: files
+    description: Impacted file listing for working tree, commits, or ranges.
+  branch:
+    enabled: true
+    handler: branch
+    description: Branch hygiene helpers (reports, cleanup, audit, prune, sync).
+  scan:
+    enabled: true
+    handler: scan
+    description: Repository scans (conflict markers, etc.).
+  base:
+    enabled: true
+    handler: base
+    description: Merge-base helper using configured default base branch.
+  compare:
+    enabled: true
+    handler: compare
+    description: Diff between two refs or branches with diff-style options.
+  show:
+    enabled: true
+    handler: show
+    description: Commit metadata with optional patch/stat output.
+  pr:
+    enabled: true
+    handler: pr
+    description: PR status, mergeability, and template-driven workflows.
+
+overlap_commands:
+  status:
+    default: git
+  help:
+    default: git
+  version:
+    default: git
+
+git_only_commands:
+  - add
+  - branch
+  - checkout
+  - commit
+  - diff
+  - fetch
+  - log
+  - merge
+  - pull
+  - push
+  - rebase
+  - reset
+  - restore
+  - show
+  - status
+  - stash
+  - tag
+
+gh_only_commands:
+  - auth
+  - issue
+  - pr
+  - repo
+  - run
+
+command_overrides:
+  git:
+    rebase: false
+
+branch_hygiene:
+  default_base: develop
+  default_remote: origin
+  include_remotes: true
+  fetch_before: true
+  protected_branches:
+    - main
+    - develop
+    - test
+    - backup-main
+    - backup-develop
+    - develop-backup-base-0.0.0
+  protected_patterns: []
+  ignore_patterns: []
+  merge_policies:
+    - target: main
+      allowed_sources: [develop]
+      enforce_cleanup: false
+  cleanup:
+    default_apply: false
+    enforce_merge_policy: false
+  prune:
+    pattern: "codex-cli/*"
+    default_apply: false
+  name_patterns:
+    - "cc/*/*/*"
+
+guardrails:
+  protected_branches:
+    - main
+    - develop
+    - test
+    - backup-main
+    - backup-develop
+    - develop-backup-base-0.0.0
+  protected_patterns: []
+  protected_ops:
+    - commit
+    - push
+    - rebase
+    - merge
+    - cherry-pick
+    - reset
+    - branch
+  require_clean_ops:
+    - rebase
+    - merge
+    - cherry-pick
+    - reset
+    - branch
+    - push
+  enforce_branch_name_ops: []
+  branch_name_patterns:
+    - "cc/*/*/*"
+  safe_block_ops:
+    - rebase
+    - "reset --hard"
+    - "push --force"
+    - "push --force-with-lease"
+    - "push -f"
+    - "branch -D"
+  merge_policies:
+    - target: main
+      allowed_sources: [develop]
+  conflict_scan:
+    paths: []
+    exclude_patterns:
+      - ".git/*"
+      - "node_modules/*"
+  safe_mode: false
+
+pr_helpers:
+  default_template: basic
+  templates:
+    basic: pr_templates/basic.md
+  notes_block:
+    start: "<!-- NOTES START -->"
+    end: "<!-- NOTES END -->"
+
+profiles:
+  default: {}
+  compact_auto:
+    router:
+      compact_auto_tune:
+        enabled: true
+        metric: tokens
+        encoding: cl100k_base
+        candidates:
+          - path-table
+          - path-common-prefix
+          - no-prefix
+  ci:
+    router:
+      diff_default_noise: max
+      diff_default_detail: 1
+      command_timeout: 30
+    command_overrides:
+      git:
+        push: false
+        rebase: false
+        reset: false
+  safe:
+    guardrails:
+      safe_mode: true
+    command_overrides:
+      git:
+        push: false
+        rebase: false
+        reset: false

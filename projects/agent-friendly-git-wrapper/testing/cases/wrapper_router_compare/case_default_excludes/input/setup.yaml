@@ -1,0 +1,9 @@
+﻿base_branch: main
+head_branch: feature
+head_commits:
+  - message: "doc change"
+    file: docs/readme.md
+    content: "Docs update\n"
+  - message: "code change"
+    file: sample.txt
+    content: "Hello feature\n"

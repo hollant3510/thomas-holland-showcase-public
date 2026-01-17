@@ -1,0 +1,148 @@
+31d9b6f4d2033438d3375d4c3fbadcd5c08660d9 Improve handling of config and rules errors for app server clients (#9182)
+codex-rs/app-server-protocol/src/protocol/common.rs
+codex-rs/app-server-protocol/src/protocol/v2.rs
+codex-rs/app-server/src/lib.rs
+codex-rs/app-server/src/message_processor.rs
+codex-rs/app-server/src/outgoing_message.rs
+codex-rs/common/src/lib.rs
+codex-rs/core/src/codex.rs
+codex-rs/core/src/config/mod.rs
+codex-rs/core/src/config_loader/mod.rs
+codex-rs/core/src/config_loader/overrides.rs
+codex-rs/core/src/exec_policy.rs
+codex-rs/core/src/lib.rs
+codex-rs/exec/src/lib.rs
+codex-rs/tui/src/lib.rs
+codex-rs/tui/tests/suite/no_panic_on_startup.rs
+codex-rs/tui2/src/lib.rs
+codex-rs/tui2/tests/suite/no_panic_on_startup.rs
+
+5a82a72d935b7648fbd04462e2010eaa96783468 Use offline cache for tui migrations (#9186)
+codex-rs/tui/src/app.rs
+codex-rs/tui2/src/app.rs
+
+ce49e9284823aca7e398b30ae76e1a4144ccbf23 fix(tui): harden paste-burst state transitions (#9124)
+codex-rs/tui/src/bottom_pane/chat_composer.rs
+codex-rs/tui2/src/bottom_pane/chat_composer.rs
+
+4d787a2cc26d2c123fc153e6b5b7f8be7dc656fd Renew cache ttl on etag match (#9174)
+codex-rs/core/src/models_manager/cache.rs
+codex-rs/core/src/models_manager/manager.rs
+codex-rs/core/tests/suite/mod.rs
+codex-rs/core/tests/suite/models_cache_ttl.rs
+
+c96c26cf5b7532788602e262eb72eeaf4f851f45 [CODEX-4427] improve parsed commands (#8933)
+codex-rs/core/src/parse_command.rs
+
+7e33ac7eb6cc68f3b9fe0021d4af3b9e7bf6bb96 clean models manager (#9168)
+codex-rs/app-server/src/models.rs
+codex-rs/core/src/codex.rs
+codex-rs/core/src/models_manager/cache.rs
+codex-rs/core/src/models_manager/manager.rs
+codex-rs/core/src/thread_manager.rs
+codex-rs/core/tests/suite/list_models.rs
+codex-rs/core/tests/suite/prompt_caching.rs
+codex-rs/core/tests/suite/remote_models.rs
+codex-rs/exec/src/lib.rs
+codex-rs/protocol/src/openai_models.rs
+codex-rs/tui/src/app.rs
+codex-rs/tui2/src/app.rs
+
+ebbbee70c6ce9acff65ecb0c05041c8fae073a06 Update models.json (#9136)
+codex-rs/core/models.json
+
+5a70b1568f871d7ea73746b1e8247ba50157c901 WebSocket test server script (#9175)
+scripts/mock_responses_websocket_server.py
+
+903a0c0933091ff83483c21ceff11cb182a7b64b feat: add bazel-codex entry to justfile (#9177)
+MODULE.bazel.lock
+justfile
+
+4c673086bc5b4b04ac859d3ec06632cb0ce70724 fix: integration test for #9011 (#9166)
+codex-rs/Cargo.lock
+codex-rs/Cargo.toml
+codex-rs/tui/BUILD.bazel
+codex-rs/tui/Cargo.toml
+codex-rs/tui/tests/all.rs
+codex-rs/tui/tests/suite/mod.rs
+codex-rs/tui/tests/suite/no_panic_on_startup.rs
+codex-rs/tui2/BUILD.bazel
+codex-rs/tui2/Cargo.toml
+codex-rs/tui2/tests/all.rs
+codex-rs/tui2/tests/suite/mod.rs
+codex-rs/tui2/tests/suite/no_panic_on_startup.rs
+
+2cd1a0a45e8552dced0241ae024ffc354208a8ad fix: report an appropriate error in the TUI for malformed rules (#9011)
+codex-rs/cli/src/main.rs
+codex-rs/tui/src/app.rs
+codex-rs/tui/src/app_event.rs
+codex-rs/tui/src/chatwidget/agent.rs
+codex-rs/tui/src/lib.rs
+codex-rs/tui2/src/app.rs
+codex-rs/tui2/src/app_event.rs
+codex-rs/tui2/src/chatwidget/agent.rs
+codex-rs/tui2/src/lib.rs
+
+9f8d3c14ce84c5f4bfd96bd2d723dbb337e72418 Fix flakiness in WebSocket tests (#9169)
+codex-rs/core/tests/common/responses.rs
+
+89403c5e116da1c561d1b8fba4b8660f7108c29a Allow close skill popup with esc. (#9165)
+codex-rs/tui/src/bottom_pane/chat_composer.rs
+codex-rs/tui/src/bottom_pane/skill_popup.rs
+codex-rs/tui2/src/bottom_pane/chat_composer.rs
+codex-rs/tui2/src/bottom_pane/skill_popup.rs
+
+3c711f3d160f939aa668052f82535f3dbb3da9e6 Fix spinner/Esc interrupt when MCP startup completes mid-turn (#8661)
+codex-rs/tui/src/chatwidget.rs
+codex-rs/tui/src/chatwidget/tests.rs
+codex-rs/tui2/src/chatwidget.rs
+codex-rs/tui2/src/chatwidget/tests.rs
+
+141d2b502215e4017d0eb673000b8e571dbee9e5 test(tui): add deterministic paste-burst tests (#9121)
+codex-rs/tui/src/bottom_pane/chat_composer.rs
+codex-rs/tui/src/bottom_pane/paste_burst.rs
+codex-rs/tui2/src/bottom_pane/chat_composer.rs
+codex-rs/tui2/src/bottom_pane/paste_burst.rs
+
+ebacd28817564480b47351a37ab3db4413e5f871 fix(windows-sandbox-rs) bump SETUP_VERSION (#9134)
+codex-rs/windows-sandbox-rs/src/setup_orchestrator.rs
+
+e25d2ab3bfa3506e49513f47a3c0eae6d86a1a0e Fresh tooltips (#9130)
+codex-rs/tui/src/chatwidget.rs
+codex-rs/tui/tooltips.txt
+codex-rs/tui2/src/chatwidget.rs
+codex-rs/tui2/tooltips.txt
+
+bde734fd1e2e82f3417606bb7c3ad105101fcf8a feat(app-server): add an --analytics-default-enabled flag (#9118)
+codex-rs/app-server/src/lib.rs
+codex-rs/app-server/src/main.rs
+codex-rs/app-server/tests/suite/v2/analytics.rs
+codex-rs/app-server/tests/suite/v2/mod.rs
+codex-rs/cli/src/main.rs
+
+58e8f75b276bbc6bae5bde633137ceee399db6d9 fix(tui): document paste-burst state machine (#9020)
+.markdownlint-cli2.yaml
+codex-rs/tui/src/bottom_pane/AGENTS.md
+codex-rs/tui/src/bottom_pane/chat_composer.rs
+codex-rs/tui/src/bottom_pane/paste_burst.rs
+codex-rs/tui/src/bottom_pane/textarea.rs
+codex-rs/tui2/src/bottom_pane/AGENTS.md
+codex-rs/tui2/src/bottom_pane/chat_composer.rs
+codex-rs/tui2/src/bottom_pane/paste_burst.rs
+codex-rs/tui2/src/bottom_pane/textarea.rs
+
+2651980bdf803ec3dd7d7540648de286e4de2ec2 Restrict MCP servers from `requirements.toml` (#9101)
+codex-rs/app-server/src/codex_message_processor.rs
+codex-rs/app-server/src/config_api.rs
+codex-rs/cli/src/mcp_cmd.rs
+codex-rs/core/src/codex.rs
+codex-rs/core/src/config/constraint.rs
+codex-rs/core/src/config/mod.rs
+codex-rs/core/src/config_loader/config_requirements.rs
+codex-rs/core/src/config_loader/mod.rs
+codex-rs/core/src/mcp/mod.rs
+codex-rs/core/src/mcp_connection_manager.rs
+codex-rs/core/tests/suite/rmcp_client.rs
+codex-rs/core/tests/suite/truncation.rs
+codex-rs/tui/src/history_cell.rs
+codex-rs/tui2/src/history_cell.rs

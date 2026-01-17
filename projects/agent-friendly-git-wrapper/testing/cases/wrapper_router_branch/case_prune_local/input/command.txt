@@ -1,0 +1,1 @@
+﻿branch prune-local --pattern feature --dry-run

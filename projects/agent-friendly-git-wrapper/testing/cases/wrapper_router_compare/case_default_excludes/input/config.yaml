@@ -1,0 +1,3 @@
+﻿router:
+  diff_default_excludes:
+    - "docs/**"

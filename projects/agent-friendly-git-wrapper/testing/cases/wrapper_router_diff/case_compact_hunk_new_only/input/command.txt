@@ -1,0 +1,1 @@
+diff --compact=short-hunk-header,hunk-new-only

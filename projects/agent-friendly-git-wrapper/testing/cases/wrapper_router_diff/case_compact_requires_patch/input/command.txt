@@ -1,0 +1,1 @@
+diff --compact --detail 1

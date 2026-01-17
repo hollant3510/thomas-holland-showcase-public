@@ -1,0 +1,5 @@
+﻿remote: true
+ahead_branch: feature
+push_branches:
+  - feature
+checkout: main

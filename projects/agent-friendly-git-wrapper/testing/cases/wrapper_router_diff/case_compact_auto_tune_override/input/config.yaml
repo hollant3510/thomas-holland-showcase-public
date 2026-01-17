@@ -1,0 +1,16 @@
+router:
+  compact_auto_tune:
+    enabled: true
+    metric: chars
+    candidates:
+      - path-table
+  compact_defaults:
+    context: 3
+    drop_headers: false
+    no_prefix: false
+    short_diff_header: false
+    short_hunk_header: false
+    path_table: false
+    path_common_prefix: false
+    hunk_new_only: false
+    prefix_first_only: false

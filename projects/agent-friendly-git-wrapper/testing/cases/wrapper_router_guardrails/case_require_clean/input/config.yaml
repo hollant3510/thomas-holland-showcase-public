@@ -1,0 +1,8 @@
+﻿command_overrides:
+  git:
+    rebase: true
+guardrails:
+  protected_branches: []
+  protected_ops: []
+  require_clean_ops: [rebase]
+  safe_block_ops: []

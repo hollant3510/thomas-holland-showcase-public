@@ -1,0 +1,1 @@
+﻿compare main..feature --detail 0 --include sample.txt --exclude docs.md

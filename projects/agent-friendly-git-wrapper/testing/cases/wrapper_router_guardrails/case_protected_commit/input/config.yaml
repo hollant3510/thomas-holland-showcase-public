@@ -1,0 +1,5 @@
+﻿guardrails:
+  protected_branches: [main]
+  protected_ops: [commit]
+  require_clean_ops: []
+  safe_block_ops: []

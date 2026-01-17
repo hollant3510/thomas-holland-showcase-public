@@ -1,0 +1,7 @@
+﻿conflict_file: conflict.txt
+content: |
+  <<<<<<< HEAD
+  A
+  =======
+  B
+  >>>>>>> branch

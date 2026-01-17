@@ -1,0 +1,1 @@
+show HEAD --stat --name-status

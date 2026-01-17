@@ -1,0 +1,2 @@
+﻿sync: feature
+upstream=origin/feature
